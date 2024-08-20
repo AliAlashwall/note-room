@@ -28,6 +28,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.testroomdatabase.ui.theme.TestRoomDatabaseTheme
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -68,7 +69,9 @@ fun NotesScreen(viewModel: NoteViewModel) {
                     onClick = { viewModel.deleteNote(note) }
                 ) {
                     Row(
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier
+                            .padding(26.dp)
+                            .fillMaxWidth(),
                         horizontalArrangement = Arrangement.Start,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
@@ -80,7 +83,7 @@ fun NotesScreen(viewModel: NoteViewModel) {
                         )
                         Spacer(modifier = Modifier.weight(1f))
                         Text(
-                            text = note.date,
+                            text = note.date.toString().take(10),
                             textAlign = TextAlign.End,
                             modifier = Modifier
                                 .padding(16.dp)
@@ -97,7 +100,7 @@ fun NotesScreen(viewModel: NoteViewModel) {
 @Composable
 private fun NotesPreview() {
     TestRoomDatabaseTheme {
-        val viewModel = NoteViewModel()
+        val viewModel: NoteViewModel = viewModel()
         NotesScreen(viewModel)
     }
 }

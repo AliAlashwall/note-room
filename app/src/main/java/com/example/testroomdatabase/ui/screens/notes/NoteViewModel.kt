@@ -9,7 +9,7 @@ import com.example.testroomdatabase.data.repository.NoteRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import java.time.LocalDate
+import java.util.Date
 
 class NoteViewModel : ViewModel() {
 
@@ -25,7 +25,7 @@ class NoteViewModel : ViewModel() {
                 Note(
                     id = 0,
                     content = noteContent,
-                    date = LocalDate.now().dayOfMonth.toString() + "/" + LocalDate.now().monthValue.toString() + "/" + LocalDate.now().year.toString(),
+                    date = Date(),
                     isImportant = false
                 )
             )
