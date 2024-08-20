@@ -1,6 +1,11 @@
 package com.example.testroomdatabase.ui.screens.notes
 
+import android.os.Build
+import androidx.annotation.RequiresApi
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -25,6 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.testroomdatabase.ui.theme.TestRoomDatabaseTheme
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun NotesScreen(viewModel: NoteViewModel) {
     LaunchedEffect(Unit) {
@@ -61,19 +67,32 @@ fun NotesScreen(viewModel: NoteViewModel) {
                         .fillMaxWidth(),
                     onClick = { viewModel.deleteNote(note) }
                 ) {
-                    Text(
-                        text = note.content,
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier
-                            .padding(16.dp)
-                            .fillMaxWidth()
-                    )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Start,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = note.content,
+                            textAlign = TextAlign.Start,
+                            modifier = Modifier
+                                .padding(16.dp)
+                        )
+                        Spacer(modifier = Modifier.weight(1f))
+                        Text(
+                            text = note.date,
+                            textAlign = TextAlign.End,
+                            modifier = Modifier
+                                .padding(16.dp)
+                        )
+                    }
                 }
             }
         }
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Preview(showBackground = true)
 @Composable
 private fun NotesPreview() {
