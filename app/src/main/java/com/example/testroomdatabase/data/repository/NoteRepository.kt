@@ -7,10 +7,13 @@ class NoteRepository {
 
     private val dao = NoteDatabase.getInstanceWithoutContext().getNoteDao()
 
-    fun insertNote(note: Note) {
+    suspend fun insertNote(note: Note) {
         dao.insert(note)
     }
 
     fun getNotes() = dao.getAllNotes()
 
+    suspend fun deleteNote(note: Note) {
+        dao.delete(note)
+    }
 }
