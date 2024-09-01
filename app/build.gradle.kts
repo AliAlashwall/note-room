@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.testroomdatabase"
+    namespace = "com.example.noteapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.testroomdatabase"
+        applicationId = "com.example.noteapp"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

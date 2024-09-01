@@ -1,11 +1,11 @@
-package com.example.testroomdatabase.ui.screens.notes
+package com.example.noteapp.ui.screens.notes
 
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.testroomdatabase.data.database.Note
-import com.example.testroomdatabase.data.repository.NoteRepository
+import com.example.noteapp.data.database.Note
+import com.example.noteapp.data.repository.NoteRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

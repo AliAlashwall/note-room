@@ -1,4 +1,4 @@
-package com.example.testroomdatabase.ui.theme
+package com.example.noteapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

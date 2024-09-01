@@ -1,4 +1,4 @@
-package com.example.testroomdatabase.data.database
+package com.example.noteapp.data.database
 
 import androidx.room.TypeConverter
 import java.util.Date

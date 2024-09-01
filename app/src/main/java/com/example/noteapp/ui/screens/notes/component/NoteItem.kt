@@ -1,4 +1,4 @@
-package com.example.testroomdatabase.ui.screens.notes.component
+package com.example.noteapp.ui.screens.notes.component
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,7 +14,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.testroomdatabase.ui.theme.TestRoomDatabaseTheme
+import com.example.noteapp.ui.theme.NoteAppTheme
 
 @Composable
 fun NoteItem(
@@ -59,7 +59,7 @@ fun NoteItem(
 @Preview(showBackground = false, showSystemUi = true)
 @Composable
 private fun NoteItemPreview() {
-    TestRoomDatabaseTheme {
+    NoteAppTheme {
         NoteItem(
             onClickItem = {},
             content = "This is a note",

@@ -1,4 +1,4 @@
-package com.example.testroomdatabase.ui.screens.notes
+package com.example.noteapp.ui.screens.notes
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -22,8 +22,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.testroomdatabase.ui.screens.notes.component.NoteItem
-import com.example.testroomdatabase.ui.theme.TestRoomDatabaseTheme
+import com.example.noteapp.ui.screens.notes.component.NoteItem
+import com.example.noteapp.ui.theme.NoteAppTheme
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -69,7 +69,7 @@ fun NotesScreen(viewModel: NoteViewModel) {
 @Preview(showBackground = true)
 @Composable
 private fun NotesPreview() {
-    TestRoomDatabaseTheme {
+    NoteAppTheme {
         val viewModel: NoteViewModel = viewModel()
         NotesScreen(viewModel)
     }

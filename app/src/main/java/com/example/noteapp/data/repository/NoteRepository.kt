@@ -1,7 +1,7 @@
-package com.example.testroomdatabase.data.repository
+package com.example.noteapp.data.repository
 
-import com.example.testroomdatabase.data.database.Note
-import com.example.testroomdatabase.data.database.NoteDatabase
+import com.example.noteapp.data.database.Note
+import com.example.noteapp.data.database.NoteDatabase
 
 class NoteRepository {
 
