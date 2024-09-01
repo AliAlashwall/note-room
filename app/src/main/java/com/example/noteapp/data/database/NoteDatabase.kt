@@ -13,7 +13,7 @@ abstract class NoteDatabase : RoomDatabase() {
     abstract fun getNoteDao(): NoteDao
 
     companion object {
-        private const val DATABASE_NAME = "note_database"
+        private const val DATABASE_NAME = "notes_database"
 
         // For Singleton instantiation
         @Volatile    //  this annotation makes sure that the value of instance is always up-to-date

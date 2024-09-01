@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">NoteApp</string>
+    <string name="sticky_notes_image">sticky notes image</string>
+    <string name="enter_note_title">Enter note title</string>
+    <string name="enter_note_content">Enter note content</string>
+    <string name="add_note">Add Note</string>
+    <string name="delete_note">delete note</string>
+    <string name="notes">Notes</string>
 </resources>
