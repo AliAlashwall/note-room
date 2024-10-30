@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.noteapp.data.database.Note
 import com.example.noteapp.data.repository.NoteRepository
-import com.example.noteapp.ui.screens.notes.component.model.NoteUiState
+import com.example.noteapp.ui.screens.notes.model.NoteUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -28,7 +28,15 @@ class NoteViewModel : ViewModel() {
         _noteUiState.value = _noteUiState.value.copy(noteContent = content)
     }
 
-    fun insertNote(noteTitle: String, noteContent: String) {
+    fun updateNoteColor(color: Long) {
+        _noteUiState.value = _noteUiState.value.copy(noteColor = color)
+    }
+
+    fun clearNoteHistory() {
+        _noteUiState.value = NoteUiState()
+    }
+
+    fun insertNote(noteTitle: String, noteContent: String, noteColor: Long) {
         viewModelScope.launch {
             repository.insertNote(
                 Note(
@@ -36,7 +44,8 @@ class NoteViewModel : ViewModel() {
                     title = noteTitle,
                     content = noteContent,
                     date = Date(),
-                    isImportant = false
+                    isImportant = false,
+                    color = noteColor
                 )
             )
             getNotes()

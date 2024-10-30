@@ -1,6 +1,5 @@
 package com.example.noteapp.ui.screens.notes.component
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.material3.BottomSheetDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -11,7 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.noteapp.ui.theme.darkOverlay
-import com.example.noteapp.ui.theme.lightOverlay
 
 @ExperimentalMaterial3Api
 @Composable
@@ -26,7 +24,7 @@ fun MyModalBottomSheet(
         sheetState = sheetState,
         dragHandle = { BottomSheetDefaults.DragHandle() },
         modifier = modifier.imePadding(),
-        containerColor = if (isSystemInDarkTheme()) darkOverlay else lightOverlay
+        containerColor =  darkOverlay
     ) {
         content()
     }
